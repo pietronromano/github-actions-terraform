@@ -83,7 +83,7 @@ az role assignment create \
 - Set the subject. GitHub defines its value depending on your workflow:
   - For jobs in your GitHub Actions environment, use: 
     - repo:< Organization/Repository >:environment:< Name >
-    - repo:pietronromano/github-actions-dotnet:environment:Development
+    - repo:pietronromano/github-actions-terraform:environment:Development
 
 appId=a3a8cb51-7eb4-47c6-8b1d-f0a5134d1be7
 credential="credential-"$entra_app
@@ -107,7 +107,7 @@ az ad app federated-credential create --id $appId --parameters credential.json
         "subject": "repo:pietronromano/github-actions-terraform:environment:Development"
     }
 
-# Set Secrets in Github Environment called "Development":
+# Set Secrets in Github Environment called "Development": these are referenced in terraform-basic.yml
  - AZURE_CLIENT_ID: Application (client) ID
  - AZURE_TENANT_ID: Directory (tenant) ID
  - AZURE_subscriptionId: Subscription ID 
