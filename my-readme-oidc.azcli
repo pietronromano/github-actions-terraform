@@ -89,6 +89,9 @@ appId=a3a8cb51-7eb4-47c6-8b1d-f0a5134d1be7
 credential="credential-"$entra_app
 echo $credential
 
+
+# az ad app federated-credential delete --federated-credential-id 65d65fa9-098b-4e87-a315-162289100c58 --id $appId
+
 az ad app federated-credential create --id $appId --parameters credential.json
 
 - Output
@@ -98,7 +101,7 @@ az ad app federated-credential create --id $appId --parameters credential.json
             "api://AzureADTokenExchange"
         ],
         "description": "Credential for Development Environment",
-        "id": "65d65fa9-098b-4e87-a315-162289100c58",
+        "id": "79c7cf8c-e189-40cd-aef0-984af7829014",
         "issuer": "https://token.actions.githubusercontent.com",
         "name": "credential-github-actions-terraform",
         "subject": "repo:pietronromano/github-actions-terraform:environment:Development"
