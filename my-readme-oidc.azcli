@@ -55,11 +55,12 @@ az ad sp create --id a3a8cb51-7eb4-47c6-8b1d-f0a5134d1be7
 ## NOTE: assigneeObjectId is the sp id returned from "az ad sp create "
 assigneeObjectId=fb56c1a2-cd66-40dc-9937-36f8d1f2d15d
 
+## Create at subscription level, to allow creating the resource group in the Terraform
 az role assignment create \
     --role contributor \
     --subscription $subscriptionId \
     --assignee-object-id  $assigneeObjectId \
-    --scope /subscriptions/$subscriptionId/resourceGroups/$rg \
+    --scope /subscriptions/$subscriptionId \
     --assignee-principal-type ServicePrincipal
 
 ## Output  

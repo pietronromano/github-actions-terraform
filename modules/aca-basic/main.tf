@@ -3,10 +3,12 @@
   No remote state used
 */
 
+
 resource "azurerm_resource_group" "rg" {
   name     = var.resource_group_name
   location = var.location
 }
+
 
 resource "azurerm_log_analytics_workspace" "law" {
   name                = var.law_name
@@ -51,11 +53,6 @@ resource "azurerm_container_app" "aca" {
     external_enabled           = true
     target_port                = 80
     transport                  = "auto"
-
-    #These don't exist, need to use CLI with a yaml file: https://learn.microsoft.com/en-us/azure/container-apps/ingress-how-to?pivots=azure-cli#use-additional-tcp-ports
-    #additional_ingress_enabled              = true
-    #additional_exposed_port                 = 9091
-    #additional_target_port                  = 9091
 
     traffic_weight {
       latest_revision = true
