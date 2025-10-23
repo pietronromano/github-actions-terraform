@@ -110,6 +110,7 @@ az ad app federated-credential create --id $appId --parameters credential.json
  - AZURE_subscriptionId: Subscription ID 
 
 ## Use GH CLI, SEE: https://cli.github.com/manual/gh
+
 gh auth login
 ## Set secrets for current git remote repo
 gh secret set --env Development AZURE_CLIENT_ID --body $appId

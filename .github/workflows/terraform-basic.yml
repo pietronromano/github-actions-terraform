@@ -16,7 +16,8 @@ on:
 jobs:
   terraform:
     runs-on: ubuntu-latest
-
+    environment:
+      name: Development # Secrets must be stored in this Environment in Github
     defaults:
       run:
         working-directory: ./modules/aca-basic
